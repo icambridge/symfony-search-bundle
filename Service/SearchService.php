@@ -12,15 +12,10 @@ class SearchService
 {
     /**
      * SearchHelper constructor.
-     *
-     * @param ContainerInterface $container
-     * @param EntityManager      $entityManager
      */
-    public function __construct(ContainerInterface $container, EntityManager $entityManager)
+    public function __construct()
     {
-        $this->container     = $container;
-        $this->entityManager = $entityManager;
-        $this->tnt           = new TNTSearch();
+        $this->tnt = new TNTSearch();
     }
 
     /**
@@ -56,11 +51,9 @@ class SearchService
      */
     public function getSearchResults($search, $indexName, $config, $maximumResults = 100)
     {
-        $tnt = new TNTSearch();
-
-        $tnt->loadConfig($config);
-        $tnt->selectIndex($indexName);
-        $results = $tnt->search($search, $maximumResults);
+        $this->tnt->loadConfig($config);
+        $this->selectIndex($indexName);
+        $results =  $this->search($search, $maximumResults);
 
         return $results;
     }

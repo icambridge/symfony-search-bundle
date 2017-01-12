@@ -1,4 +1,3 @@
 services:
     search_service:
         class:  Itl\ItlSearchBundle\Service\SearchService
-        arguments: [ "@service_container", "@doctrine.orm.entity_manager" ]
