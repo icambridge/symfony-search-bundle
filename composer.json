@@ -1,7 +1,7 @@
 {
   "name" : "itl/search-bundle",
   "description" : "Interlutions search bundle for Symfony 3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type" : "symfony-bundle",
   "authors" : [{
     "name" : "Julian Claus",
