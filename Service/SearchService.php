@@ -52,8 +52,8 @@ class SearchService
     public function getSearchResults($search, $indexName, $config, $maximumResults = 100)
     {
         $this->tnt->loadConfig($config);
-        $this->selectIndex($indexName);
-        $results =  $this->search($search, $maximumResults);
+        $this->tnt->selectIndex($indexName);
+        $results =  $this->tnt->search($search, $maximumResults);
 
         return $results;
     }
